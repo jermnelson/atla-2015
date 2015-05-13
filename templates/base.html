@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>American Theological Library Association Conference 2015 - BIBFRAME Introduction Bootstrap 101 Template</title>
+    <title>American Theological Library Association Conference 2015 - BIBFRAME Introduction</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <style>
      body {
        background-color: #f1e8c9;
+     }
+
+     .footer {
+       position: absolute;
+       bottom: 0;
+       width: 90%;
+       height: 50px;
+       background-color: #f5f5f5;
+      }
+
+     .title {
+       color: #990000 !important;
      }
     </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,17 +34,32 @@
     <![endif]-->
   </head>
   <body class="container">
-    {% include 'snippets/navbar.html' %}
+    {% block nav %}{% endblock %}
 
     {% block header %}
     <header class="jumbotron">
       {#<img src="https://www.atla.com/Members/conference/SiteAssets/Pages/default/ATLA%202015%20Header-01.png" style="height: 300px; width: 500px">#}
-      <h1 style="color: #990000">Introduction to BIBFRAME</h1>
+      <h2>ATLA 2015</h2>
+      <h1 class="title">Introduction to BIBFRAME</h1>
       <h4>by Jeremy Nelson<br>Metadata and Systems Librarian<br>Colorado College</h4>
     </header>
     {% endblock %}
     {% block main %}
     <h1>Hello, world!</h1>
+    {% endblock %}
+  
+    {% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright 2015 by 
+        <a href="mailto:jeremy.nelson@coloradocollege.edu">Jeremy Nelson</a> under 
+        <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+        Source code for this presentation is
+        licensed under the GPLv3 and is available on <a href="https://github.com/jermnelson/atla-2015">github</a>.
+
+        </p>
+      </div>
+    </footer>
     {% endblock %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

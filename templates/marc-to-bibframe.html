@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% import 'snippets/navbar.html' as navbar %}
+{% import 'snippets/slide-nav.html' as slide_nav %}
+
+{% block nav %}
+{{ navbar.generate(3) }}
+{% endblock %}
+
+{% block header %}
+<header class="jumbotron">
+  <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
+  <h1>Mapping MARC to BIBFRAME</h1>
+</header>
+{% endblock %}
+
+{% block main %}
+{{ slide_nav.generate(next_slide='bibframe-tech', previous='bibframe') }}
+{% endblock %}

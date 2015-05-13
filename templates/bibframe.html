@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% import 'snippets/navbar.html' as navbar %}
+{% import 'snippets/slide-nav.html' as slide_nav %}
+
+{% block nav %}
+{{ navbar.generate(2) }}
+{% endblock %}
+
+{% block header %}
+<header class="jumbotron">
+  <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
+  <h1>BIBFRAME</h1>
+  <p class="lead">BIBFRAME, short for Bibliographic Framework, </p>
+</header>
+{% endblock %}
+
+{% block main %}
+{{ slide_nav.generate(next_slide='marc-to-bibframe', previous='library-linked-data') }}
+{% endblock %}

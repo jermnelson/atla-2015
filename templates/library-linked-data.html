@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% import 'snippets/navbar.html' as navbar %}
+{% import 'snippets/slide-nav.html' as slide_nav %}
+
+{% block nav %}
+{{ navbar.generate(1) }}
+{% endblock %}
+
+
+{% block header %}
+<header class="jumbotron">
+  <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
+  <h1>Linked Data in Libraries</h1>
+  <p class="lead">Linked Data is about representing information
+   in statements called RDF Triples i.e. subject-predicate-object.
+   Libraries standards are shifting to Linked-Data vocabularies 
+   like BIBFRAME and Schema.org. RDA and MARC can also be reformulated
+   as Linked Data triples as well.
+  </p>
+</header>
+{% endblock %}
+
+{% block main %}
+
+{{ slide_nav.generate(next_slide='bibframe', previous='/') }}
+{% endblock %}

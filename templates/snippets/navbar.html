@@ -1,3 +1,4 @@
+{% macro generate(page) -%}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,8 +13,30 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li {% if page == 1 %}class="active"{% endif %}>
+            <a href="{{ url_for('page', name='library-linked-data') }}">
+             LDL
+            <span class="sr-only">{% if page == 1 %}(current){% endif %}</span></a>
+        </li>
+        <li {% if page == 2 %}class="active"{% endif %}>
+            <a href="{{ url_for('page', name='bibframe') }}">BIBFRAME
+
+            <span class="sr-only">{% if page == 2 %}(current){% endif %}</span></a>
+            </a>
+        </li>
+        <li {% if page == 3 %}class="active"{% endif %}>
+            <a href="{{ url_for('page', name='marc-to-bibframe') }}">MARC-to-BIBFRAME
+            <span class="sr-only">{% if page == 3 %}(current){% endif %}</span></a>
+            </a>
+        </li>
+        <li {% if page == 4 %}class="active"{% endif %}>
+            <a href="{{ url_for('page', name='bibframe-tech') }}">
+             BIBFRAME Technologies
+            <span class="sr-only">{% if page == 4 %}(current){% endif %}</span></a>
+            </a>
+        </li>
+
       </ul>
     </div>
 </nav>
+{%- endmacro %}

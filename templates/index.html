@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
+
+{% import 'snippets/navbar.html' as navbar %}
+{% import 'snippets/slide-nav.html' as slide_nav %}
+
+{% block nav %}
+{{ navbar.generate(0) }}
+{% endblock %}
+
 {% block main %}
+
 <div class="row">
   <article class="col-md-6">
    <p class="lead">
@@ -17,13 +26,21 @@
       </div>
       <div class="panel-body">
        <ol>
-        <li>Learn about the general concepts behind Linked Data and Libraries</li>
-        <li>Overview of major BIBFRAME classes and concepts</li>
-        <li>Understand how MARC is mapped being mapped to BIBFRAME</li>
-        <li>Exposure to emerging technologies based on or using BIBFRAME</li>
+        <li>Learn about the general concepts behind 
+           <a href="{{ url_for('page', name='library-linked-data') }}">Linked Data and Libraries</a>
+        </li>
+        <li>Overview of major <a href="{{ url_for('page', name='bibframe') }}">BIBFRAME classes 
+          and concepts</a></li>
+        <li>Understand how 
+          <a href="{{ url_for('page', name='marc-to-bibframe') }}">MARC is being mapped</a>
+           to BIBFRAME</li>
+        <li>Exposure to <a href="{{ url_for('page', name='bibframe-tech') }}">emerging 
+           technologies</a> based on or using BIBFRAME</li>
        </ol>
       </div>
    </aside>
   </div>
 </div>
+
+{{ slide_nav.generate(next_slide='library-linked-data') }}
 {% endblock %}
