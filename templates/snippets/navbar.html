@@ -35,7 +35,11 @@
             <span class="sr-only">{% if page == 4 %}(current){% endif %}</span></a>
             </a>
         </li>
-
+        <li {% if page == 5 %}class="active"{% endif %}>
+           <a href="{{ url_for('open_badge') }}">
+            Open Badge
+           </a>
+        </li>
       </ul>
     </div>
 </nav>
