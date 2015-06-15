@@ -16,13 +16,102 @@
   <p class="lead">Linked Data is about representing information
    in statements called RDF Triples i.e. subject-predicate-object.
    Libraries standards are shifting to Linked-Data vocabularies 
-   like BIBFRAME and Schema.org. RDA and MARC can also be reformulated
+   like <a href="http://bibframe.org">BIBFRAME</a> and 
+   <a href="http://schema.org">Schema.org.</a> <a href="">RDA</a> and 
+   <a href="">MARC</a> can also be reformulated
    as Linked Data triples as well.
   </p>
 </header>
 {% endblock %}
 
 {% block main %}
+<hr>
+<h2 class="text-center">RDF Triple  &lt;subject&gt; &lt;predicate&gt; &lt;object&gt;</h2>
 
+<div class="row">
+ <section class="col-md-10"> 
+  <p class="lead well well-sm ">
+   Linked data is a general term for connecting one or more publishers of 
+   <a href="http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624">RDF (Resource Description Framework)</a>
+   statements called triples that express a relationship between two resources.  and are in the 
+   following format:
+  </p>
+ </section>
+ <div class="alert alert-danger col-md-2">
+   <h3>IRI</h3>
+   <p style="font-size: .9em"><em>International Resource Identifier</em> identifies a resource with URLs being 
+   the most common form of an IRI.</p>
+ </div>
+</div>
+<div class="row">
+  <article class="col-md-4">
+    <div class="panel panel-info">
+     <div class="panel-heading">
+       <h3 class="panel-title"> What is a <strong>Subject</strong>?</h3>
+     </div>
+     <div class="panel-body">
+       A subject resource can be:
+      <ul>
+         <li>IRI</li>
+         <li>Blank Node</li>
+       </ul>
+     These are all examples of <strong>subjects</strong>:
+     <p>
+       http://id.loc.gov/authorities/names/n79032879
+     </p>
+     <p>
+       http://hds.harvard.edu/
+     </p>
+     <p>
+       http://id.loc.gov/authorities/names/n79003285 
+     </p>     
+     </div>
+   </div>
+
+  </article>
+  <article class="col-md-4">
+    <div class="panel panel-warning">
+     <div class="panel-heading">
+       <h3 class="panel-title"> What is a <strong>Predicate</strong>?</h3>
+     </div>
+     <div class="panel-body">
+       A relationship between the <strong>&lt;subject&gt;</strong> and 
+       <strong>&lt;object&gt;</strong> is called a <strong>property</strong>.
+       A predicate must be an IRI. 
+       <p>
+         http://www.w3.org/2000/01/rdf-schema#label
+       </p>
+     </div>
+   </div>
+  </article>
+  <article class="col-md-4">
+    <div class="panel panel-success">
+     <div class="panel-heading">
+       <h3 class="panel-title"> What is a <strong>Object</strong>?</h3>
+     </div>
+     <div class="panel-body">
+      An object resource can be
+      <ul>
+         <li>IRI</li>
+         <li>Blank Node</li>
+         <li>Literal</li>
+       </ul>
+     </div>
+   </div>
+  </article>
+</div>
+<div class="row">
+  <article class="col-md-6 well well-sm">
+    <p class="lead">
+     Together, one or more <strong>triples</strong> make a Graph.
+
+    </p>
+  </article>
+  <section class="col-md-4">
+    <img src="{{ url_for("static", filename="img/linked-data-graph.svg") }}">
+  </section>
+</div>
 {{ slide_nav.generate(next_slide='bibframe', previous='/') }}
 {% endblock %}
+
+{# block footer %}{% endblock #}
