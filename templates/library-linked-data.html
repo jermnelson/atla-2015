@@ -17,9 +17,9 @@
    in statements called RDF Triples i.e. subject-predicate-object.
    Libraries standards are shifting to Linked-Data vocabularies 
    like <a href="http://bibframe.org">BIBFRAME</a> and 
-   <a href="http://schema.org">Schema.org.</a> <a href="">RDA</a> and 
-   <a href="">MARC</a> can also be reformulated
-   as Linked Data triples as well.
+   <a href="http://schema.org">Schema.org.</a> <a href="http://www.rdaregistry.info/">RDA</a> and 
+   <a href="http://www.marc21rdf.info/">MARC</a> can also be reformulated into
+   Linked Data triples as well.
   </p>
 </header>
 {% endblock %}
@@ -29,22 +29,62 @@
 <h2 class="text-center">RDF Triple  &lt;subject&gt; &lt;predicate&gt; &lt;object&gt;</h2>
 
 <div class="row">
- <section class="col-md-10"> 
+ <section class="col-md-8"> 
   <p class="lead well well-sm ">
    Linked data is a general term for connecting one or more publishers of 
    <a href="http://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624">RDF (Resource Description Framework)</a>
    statements called triples that express a relationship between two resources.  and are in the 
    following format:
   </p>
+  <div class="btn-group btn-group-lg btn-group-justified" role="group" aria-label="...">
+   <a href="#subject" class="btn btn-primary btn-lg"><strong>S</strong>ubject</a>
+   <a href="#" class="btn btn-lg btn-default" disabled="disabled"><span class="glyphicon glyphicon-arrow-right"></span></a>
+   <a href="#predicate" class="btn btn-warning btn-lg"><strong>P</strong>redicate</a>
+   <a href="#" class="btn btn-lg btn-default" disabled="disabled"><span class="glyphicon glyphicon-arrow-right"></span></a>
+   <a href="#object" class="btn btn-success btn-lg"><strong>O</strong>bject</a>
+  </div>
+  <br>
+  <article class="well well-sm">
+     <p class="lead">
+      Together, one or more <strong>triples</strong> make a Graph.
+     </p>
+    <img src="{{ url_for("static", filename="img/linked-data-graph.svg") }}">
+  </article>
+  <br>
+  <h2>MARC &amp; RDA Triples</h2>
+  <p>Building particularly on the work Gordon Dunsire and Diane Hillmann, both MARC fields and subfields 
+     can be represented as RDF triples. As they relate, going from a record-centric to a triple-centric
+     as the cataloging unit of record (MARC21 vs. triple) requires a significant shift in our how we
+     organize our work-flows as it both vastly increases the cataloging units while gives us much more 
+     granular level of sharing and focus. 
+  </p>
+  <table class="table table-striped">
+    <tr>
+      <th><img src="{{ url_for('static', filename='img/subject-icon.svg') }}">
+          <br>Subject
+      </th>
+      <th><img src="{{ url_for('static', filename='img/predicate-icon.svg') }}">
+          <br>Predicate
+      </th>
+      <th><img src="{{ url_for('static', filename='img/object-icon.svg') }}">
+          <br>Object
+      </th>
+    </tr>
+    <tr>
+      <td>
+    </tr>
+  </table> 
  </section>
- <div class="alert alert-danger col-md-2">
-   <h3>IRI</h3>
-   <p style="font-size: .9em"><em>International Resource Identifier</em> identifies a resource with URLs being 
-   the most common form of an IRI.</p>
- </div>
-</div>
-<div class="row">
-  <article class="col-md-4">
+ <div  class="col-md-4">
+   <div class="alert alert-danger">
+    <h3>IRI</h3>
+    <p style="font-size: .9em"><em>International Resource Identifier</em> identifies a resource with URLs being 
+    the most common form of an IRI.</p>
+    <h3>Blank Node</h3>
+    <p style="font-size: .9em">A Blank node is a placeholder variable that cannot be dereferenced outside of the graph,
+     i.e. the node doesn't exist in external source but is only valid within the context of the graph.</p>
+   </div>
+   <article id="subject">
     <div class="panel panel-info">
      <div class="panel-heading">
        <h3 class="panel-title"> What is a <strong>Subject</strong>?</h3>
@@ -60,31 +100,41 @@
        http://id.loc.gov/authorities/names/n79032879
      </p>
      <p>
-       http://hds.harvard.edu/
+       http://library.hds.harvard.edu/
      </p>
-     <p>
-       http://id.loc.gov/authorities/names/n79003285 
-     </p>     
+     </p>
+       http://id.lib.harvard.edu/aleph/003923555/catalog  
+     </p>
      </div>
    </div>
-
   </article>
-  <article class="col-md-4">
+  <article id="predicate">
     <div class="panel panel-warning">
      <div class="panel-heading">
        <h3 class="panel-title"> What is a <strong>Predicate</strong>?</h3>
      </div>
      <div class="panel-body">
+       <p>
        A relationship between the <strong>&lt;subject&gt;</strong> and 
        <strong>&lt;object&gt;</strong> is called a <strong>property</strong>.
-       A predicate must be an IRI. 
+       </p>
+       <p>
+       A predicate must be an IRI. Here are a couple of example
+       <strong>objects</strong>:
+       </p>
        <p>
          http://www.w3.org/2000/01/rdf-schema#label
+       </p>
+       <p>
+        http://bibframe.org/vocab/creator
+       </p>
+       <p>
+        http://bibframe.org/vocab/instanceOf
        </p>
      </div>
    </div>
   </article>
-  <article class="col-md-4">
+  <article id="object">
     <div class="panel panel-success">
      <div class="panel-heading">
        <h3 class="panel-title"> What is a <strong>Object</strong>?</h3>
@@ -96,20 +146,17 @@
          <li>Blank Node</li>
          <li>Literal</li>
        </ul>
+      <p>Some <strong>objects</strong> examples:</p>
+      <p>https://schema.org/Library</p>
+      <p>Blank Node [003923555instance1]</p>
+      <p>"Austen, Jane, 1775-1871"</p>
      </div>
    </div>
   </article>
+
+ </div>
 </div>
 <div class="row">
-  <article class="col-md-6 well well-sm">
-    <p class="lead">
-     Together, one or more <strong>triples</strong> make a Graph.
-
-    </p>
-  </article>
-  <section class="col-md-4">
-    <img src="{{ url_for("static", filename="img/linked-data-graph.svg") }}">
-  </section>
 </div>
 {{ slide_nav.generate(next_slide='bibframe', previous='/') }}
 {% endblock %}

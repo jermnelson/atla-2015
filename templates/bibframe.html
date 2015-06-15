@@ -12,10 +12,88 @@
 <header class="jumbotron">
   <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
   <h1>BIBFRAME</h1>
-  <p class="lead">BIBFRAME, short for Bibliographic Framework, </p>
+  <div class="row">
+   <section class="col-md-6">
+   <img src="{{ url_for('static', filename='img/bf-logo.png') }}" class="img-thumbnail pull-left">
+   <p class="lead">
+     <a href="http://bibframe.org">BIBFRAME</a>, short for 
+     <a href="http://www.loc.gov/bibframe/">Bibliographic Framework Initiative</a>,
+     refers to both the vocabulary as well as the communities and organizations
+     that understand the importance of bibliographic data to libraries and 
+     other cultural heritage institutions.
+    
+   </p>
+   </section>
+   <section class="col-md-6">
+    <blockquote class="blockquote" style="font-size: .85em">
+     Initiated by the Library of Congress, BIBFRAME provides a foundation 
+     for the future of bibliographic description, both on the web, and in 
+     the broader networked world&hellip;In addition to being a replacement 
+     for MARC, BIBFRAME serves as a general model for expressing and 
+     connecting bibliographic data. A major focus of the initiative will be 
+     to determine a transition path for the MARC 21 formats while preserving 
+     a robust data exchange that has supported resource sharing and cataloging 
+     cost savings in recent decades.
+     <footer>From <a href="http://www.loc.gov/bibframe/">http://www.loc.gov/bibframe</a>
+     website.
+     </footer>
+    </blockquote>
+   </section>
+  </div>
 </header>
 {% endblock %}
 
 {% block main %}
+<div class="row">
+  <section class="col-md-8">
+    <article class="well well-sm"> 
+     <header><h1>BIBFRAME Vocabulary</h1></header>
+     <p>The BIBFRAME Vocabulary is a RDF ontology that defines
+     subjects, predicates (properties), and objects and starting with the
+     most general class called a <strong><a href="http://bibframe.org/vocab/Resource">Resource</a></strong>. 
+     The Resource class has four main sub-classes: 
+     <ul>
+       <li><a href="#work">Work</a> - reflects the conceptual essence of the cataloging resource</a></li>    
+       <li><a href="#instance">Instance</a> - reflects the individual, material embodiment of the Work</a></li>    
+       <li><a href="#authority">Authority</a> - reflects the key authority concepts having defined relationships
+       with Works and Instances.</li>
+       <li><a href="#annotation">Annotation</a> - a resource that enhances the knowledge about another resource</li>
+     </ul>
+    </article>
+  </section>
+  <div class="col-md-2">
+    <section class="btn-group-vertical btn-group-large center-block">
+      <a href="#work-dlg" class="btn btn-default btn-large" data-toggle="modal">
+        <img src="{{ url_for("static", filename="img/bf-work.png") }}" >
+        <br><h3>Works</h3>
+      </a>
+      <a href="#instance-dlg" class="btn btn-default btn-large" data-toggle="modal">
+        <img src="{{ url_for("static", filename="img/bf-instance.png") }}" >
+        <br><h3>Instances</h3>
+      </a>
+    </section>
+  </div>
+  <div class="col-md-2">
+    <section class="btn-group-vertical btn-group-large center-block">
+      <a href="#authority-dlg" class="btn btn-default btn-large" data-toggle="modal">
+          <img src="{{ url_for("static", filename="img/bf-authority.png") }}">
+          <br><h3>Authorities</h3>
+      </a>
+      <a href="#annotation-dlg" class="btn btn-default btn-large" data-toggle="modal">
+         <img src="{{ url_for("static", filename="img/bf-annotation.png") }}">
+         <br><h3>Annotations</h3>
+      </a>
+    </section>
+  </div> 
+</div>
 {{ slide_nav.generate(next_slide='marc-to-bibframe', previous='library-linked-data') }}
 {% endblock %}
+
+{% block dialogs %}
+{% include 'snippets/work-dlg.html' %}
+{% include 'snippets/instance-dlg.html' %}
+{% include 'snippets/authority-dlg.html' %}
+{% include 'snippets/annotation-dlg.html' %}
+
+{% endblock %}
+
