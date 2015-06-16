@@ -12,18 +12,128 @@
 <header class="jumbotron">
   <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
   <h1>Mapping MARC to BIBFRAME</h1>
-  <p>There are two major projects that provide MARC21 to BIBFRAME
-   conversions. The first is the Library of Congress 
+  <p>There are a number ways to convert MARC21 to BIBFRAME.
+   One the more widely used is the Library of Congress 
    <a href="https://github.com/lcnetdev/marc2bibframe">marc2bibframe</a>
-   a XQuery process that takes MARCXML to BIBFRAME RDF.</p>
+   a XQuery process that takes MARCXML and converts the XML to BIBFRAME 
+   RDF XML.</p>
 </header>
 {% endblock %}
 
 {% block main %}
 <div class="row">
-  <section class="col-md-4">
-    <h2>MARC21</h2>
+  <section class="col-md-12">
+    <h2>MARC21 Record</h2>
+    <p>This MARC record is for <em>Santos; the religious folk art of New Mexico</em> by
+      Mitchell A. Wilder and Edgar Breitenbach, a book in Colorado College's Tutt Library.
+    </p>
+    <pre>
+=LDR  01420cam  2200361I  4500
+=001  2526779
+=003  OCoLC
+=005  19951106191332.0
+=008  761025s1943\\\\coua\\\\\b\\\\000\0\eng\\
+=010  \\$a43011598
+=035  \\$a.b11657868$bmulti$cr
+=040  \\$aDLC$cUCW$dOCL$dFUV
+=049  \\$aFUVA
+=090  \\$aN7910.N6 W5
+=100  1\$aWilder, Mitchell A.
+=245  10$aSantos;$bthe religious folk art of New Mexico:$ctext and photographs by Mitchell A. Wilder with Edgar Breitenbach, with a foreword by Rudolph A. Gerken.
+=260  \\$a[Colorado Springs]$bThe Taylor Museum of the Colorado Springs Fine Arts Center$c[1943]
+=300  \\$a49, [67] p.:$bill. 64 pl. on 31 l.$c29 x 22 cm.
+=504  \\$aBibliography: p. 48-49 (first group)
+=650  \0$aChristian art and symbolism.
+=650  \0$aFolk art$zNew Mexico.
+=650  \0$aArt, Latin American.
+=650  \0$aSaints in art.
+=650  \0$aIdols and images.
+=700  1\$aBreitenbach, Edgar.
+=710  2\$aTaylor Museum.
+=907  \\$a.b11657868
+=902  \\$a150104
+=999  \\$b3$c980803$dm$ea$fr$g0
+=994  \\$atban$axfcab$atsco
+=945  \\$aN7910.N6 W5 1943$g1$j0$lxfcab$h0$on$p$0.00$q $r-$sk$t250$u0$v0$w0$x0$y.i14112577$z990108
+=945  \\$aN7910.N6 W5$g1$i33027002449860$j0$ltsco $h0$o-$p$0.00$r-$sh$t13$u1$v0$w0$x0$y.i11924196$z940817
+=945  \\$aN7910.N6 W5$g1$i33027003282583$j0$ltban $h0$o-$p$0.00$r-$s-$t1$u16$v3$w0$x0$y.i11924184$z940817
+    </pre>
   </section>
+</div>
+<hr>
+<div class="row">
+  <article class="col-md-9 col-md-offset-2">
+   <p>The MARC21 record format should be familiar to most catalogers. MARC contains fixed and
+   variable length fields numbering from 001 to 999 with the variable length fields containing
+   zero, one, or two indicators, and one or more subfields.
+   From our sample record, we'll examine these fields:</p>
+   <table class="table table-bordered table-striped table-condensed well well-sm">
+     <tr>
+      <th>Field</th>
+      <th>Indicators</th> 
+      <th>Subfield/Data</th>
+      <th>Description</th>
+     </tr>
+     <tr>
+      <td>003</td>
+      <td>n/a</td>
+      <td>OCoLC</td>
+      <td>MARC code for organization whose control code is in 001 field.
+          For this record, it is <strong>OCoLC</strong>, the code for OCLC.
+      </td>
+     </tr>
+     <tr>
+       <td>100</td>
+       <td>Indicator1=1</td>
+       <td>Subfield a: Wilder, Mitchell A.</td>
+       <td>The MARC 100 field with indicator 1 is the Main Entry Personal Name field
+       for the person chiefly responsible for the work with the person's last name
+       in the first in a subfield.</td>
+     </tr>
+   </table>   
+  </article>
+</div>
+<hr>
+<div class="row">
+  <article class="col-md-6 well well-sm">
+   <p>Running this MARC record through the marc2bibframe conversion results in the following
+      subjects:</p>
+   <table class="table table-bordered">
+    <tr>
+     <th></th>
+     <th>Subject</th>
+     <th>Type</th>
+    </tr>
+<tr><td>1</td><td>http://catalog.coloradocollege.edu/2526779annotation18</td><td>URL</td></tr>
+<tr><td>2</td><td>http://catalog.coloradocollege.edu/2526779topic14</td><td>URL</td></tr>
+<tr><td>3</td><td>http://catalog.coloradocollege.edu/2526779topic13</td><td>URL</td></tr>
+<tr><td>4</td><td>http://catalog.coloradocollege.edu/2526779topic12</td><td>URL</td></tr>
+<tr><td>5</td><td>Nd543981961e64985b195b2feb5145b93</td><td>Blank node</td></tr>
+<tr><td>6</td><td>http://catalog.coloradocollege.edu/2526779classification15</td><td>URL</td></tr>
+<tr><td>7</td><td>Ne0693f2687d04bec8b64879fb4265cee</td><td>Blank node</td></tr>
+<tr><td>8</td><td>http://catalog.coloradocollege.edu/2526779title5</td><td>URL</td></tr>
+<tr><td>9</td><td>http://catalog.coloradocollege.edu/2526779instance19</td><td>URL</td></tr>
+<tr><td>10</td><td>http://catalog.coloradocollege.edu/2526779</td><td>URL</td></tr>
+<tr><td>11</td><td>Ne14b49708490467f9d567908c1900dfe</td><td>Blank node</td></tr>
+<tr><td>12</td><td>N6fae09c50503427c967e20038d7d950f</td><td>Blank node</td></tr>
+<tr><td>13</td><td>N8924747c79e34d39a38a4b7d11dd5646</td><td>Blank node</td></tr>
+<tr><td>14</td><td>http://catalog.coloradocollege.edu/2526779topic10</td><td>URL</td></tr>
+<tr><td>15</td><td>http://catalog.coloradocollege.edu/2526779title22</td><td>URL</td></tr>
+<tr><td>16</td><td>Ncf7d5aa19fe34d3395fbb5a9f9f48620</td><td>Blank node</td></tr>
+<tr><td>17</td><td>N7a1ba38d4df2498a8ac0ea8e8c172436</td><td>Blank node</td></tr>
+<tr><td>18</td><td>N11c3c1de67c8478baea9be729fa910dc</td><td>Blank node</td></tr>
+<tr><td>19</td><td>Neb0456d9eb3a4302b8608ee8131f649b</td><td>Blank node</td></tr>
+<tr><td>20</td><td>http://catalog.coloradocollege.edu/2526779person6</td><td>URL</td></tr>
+<tr><td>21</td><td>N7cff9302a1bb4b3bacc97a37d7909921</td><td>Blank node</td></tr>
+<tr><td>22</td><td>http://catalog.coloradocollege.edu/2526779person7</td><td>URL</td></tr>
+<tr><td>23</td><td>Na11ae77d68a64a799590f5a583ae1dba</td><td>Blank node</td></tr>
+<tr><td>24</td><td>http://catalog.coloradocollege.edu/2526779organization8</td><td>URL</td></tr>
+<tr><td>25</td><td>N7ac1c7f8704c40d8a8898d0203687ae7</td><td>Blank node</td></tr>
+<tr><td>26</td><td>http://catalog.coloradocollege.edu/2526779topic11</td><td>URL</td></tr>
+<tr><td>27</td><td>N2c00cd34292a4a32b3a5ba1a37f89a4b</td><td>Blank node</td></tr>
+   </table>
+
+  </article>
 </div>
 {{ slide_nav.generate(next_slide='bibframe-tech', previous='bibframe') }}
 {% endblock %}
