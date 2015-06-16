@@ -125,7 +125,7 @@
 </div>
 <hr>
 <div class="row">
-  <article class="col-md-6 well well-sm">
+  <article class="col-md-12 well well-sm">
    <p>Running this MARC record through the marc2bibframe conversion results in the following
       subjects:</p>
    <table class="table table-bordered">
@@ -164,6 +164,81 @@
    </table>
 
   </article>
+</div>
+<div class="row"
+  <section class="col-md-8">
+   <div class="panel panel-primary">
+    <div class="panel-heading">
+     <h3 class="panel-title"><b>Work<b>: http://catalog.coloradocollege.edu/2526779</h3>
+    </div>
+    <div class="panel-body">
+    <pre>
+&lt;http://catalog.coloradocollege.edu/2526779&gt; a bf:Text,
+        bf:Work ;
+    bf:authorizedAccessPoint "Wilder, Mitchell A. Santos; the religious folk art of New Mexico: text and photographs by Mitchell A. Wilder with Edgar Breitenbach, with a foreword by Rudolph A. Gerken.Santos;the religious folk art of New Mexico:",
+        "breitenbachedgartaylormuseumwildermitchellasantosthereligiousfolkartofnewmexicoengworktext"@x-bf-hash ;
+    bf:classification &lt;http://catalog.coloradocollege.edu/2526779classification15&gt; ;
+    bf:contributor &lt;http://catalog.coloradocollege.edu/2526779organization8&gt;,
+        &lt;http://catalog.coloradocollege.edu/2526779person7&gt; ;
+    bf:creator &lt;http://catalog.coloradocollege.edu/2526779person6&gt; ;
+    bf:derivedFrom &lt;http://catalog.coloradocollege.edu/2526779.marcxml.xml&gt; ;
+    bf:language &lt;http://id.loc.gov/vocabulary/languages/eng&gt; ;
+    bf:subject &lt;http://catalog.coloradocollege.edu/2526779topic10&gt;,
+        &lt;http://catalog.coloradocollege.edu/2526779topic11&gt;,
+        &lt;http://catalog.coloradocollege.edu/2526779topic12&gt;,
+        &lt;http://catalog.coloradocollege.edu/2526779topic13&gt;,
+        &lt;http://catalog.coloradocollege.edu/2526779topic14&gt; ;
+    bf:workTitle &lt;http://catalog.coloradocollege.edu/2526779title5&gt; .
+    </pre>
+    </div>
+   </div>
+   <div class="panel panel-warning">
+    <div class="panel-heading">
+     <h3 class="panel-title"><b>Instance<b>: http://catalog.coloradocollege.edu/2526779instance19</h3>
+    </div>
+    <div class="panel-body">
+    <pre>
+&lt;http://catalog.coloradocollege.edu/2526779instance19&gt; a bf:Instance,
+        bf:Monograph ;
+    bf:derivedFrom &lt;http://catalog.coloradocollege.edu/2526779.marcxml.xml&gt; ;
+    bf:dimensions "29 x 22 cm." ;
+    bf:extent "49, 67 p.:" ;
+    bf:illustrationNote "ill. 64 pl. on 31 ." ;
+    bf:instanceOf &lt;http://catalog.coloradocollege.edu/2526779&gt; ;
+    bf:instanceTitle &lt;http://catalog.coloradocollege.edu/2526779title22&gt; ;
+    bf:lccn [ a bf:Identifier ;
+            bf:identifierScheme &lt;http://id.loc.gov/vocabulary/identifiers/lccn&gt; ;
+            bf:identifierValue "43011598" ] ;
+    bf:modeOfIssuance "single unit" ;
+    bf:providerStatement "Colorado Springs The Taylor Museum of the Colorado Springs Fine Arts Center 1943" ;
+    bf:publication [ a bf:Provider ;
+            bf:providerDate "[1943]" ;
+            bf:providerName [ a bf:Organization ;
+                    bf:label "The Taylor Museum of the Colorado Springs Fine Arts Center" ] ;
+            bf:providerPlace [ a bf:Place ;
+                    bf:label "Colorado Springs" ] ] ;
+    bf:supplementaryContentNote "Bibliography: p. 48-49 (first group)" ;
+    bf:systemNumber [ a bf:Identifier ;
+            bf:identifierAssigner "multi" ;
+            bf:identifierScheme &lt;http://id.loc.gov/vocabulary/identifiers/systemNumber&gt; ;
+            bf:identifierValue ".b11657868" ] ;
+   </pre>
+   <div class="panel panel-success">
+    <div class="panel-heading">
+     <h3 class="panel-title"><b>Person<b>: http://catalog.coloradocollege.edu/252677person</h3>
+    </div>
+    <div class="panel-body">
+    <pre>
+
+&lt;http://catalog.coloradocollege.edu/2526779person6&gt; a bf:Person ;
+    bf:authorizedAccessPoint "Wilder, Mitchell A." ;
+    bf:hasAuthority [ a madsrdf:Authority ;
+            madsrdf:authoritativeLabel "Wilder, Mitchell A." ] ;
+    bf:label "Wilder, Mitchell A." .&
+    </div>
+   </div>
+
+  </section>
 </div>
 {{ slide_nav.generate(next_slide='bibframe-tech', previous='bibframe') }}
 {% endblock %}

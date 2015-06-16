@@ -12,10 +12,17 @@
 <header class="jumbotron">
   <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
   <h1>BIBFRAME Technologies</h1>
+  
 </header>
 {% endblock %}
-
+  
 {% block main %}
+  <h2>BIBCAT.org</h2>
+  <iframe src="http://bibcat.org" frameborder="0" border="0" cellspacing="0"></iframe>
+  <hr>
+  <h2>Libhub.org</h2>
+  <iframe src="http://libhub.org" frameborder="0" border="0" cellspacing="0"></iframe>
+
 {{ slide_nav.generate(previous='marc-to-bibframe') }}
 {% endblock %}
 
