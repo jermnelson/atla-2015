@@ -1,4 +1,4 @@
-<div class="modal fade" id="authority-dlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="authority-dlg" tabindex="3" role="dialog" aria-labelledby="Authorities" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -6,8 +6,87 @@
         <h4 class="modal-title" id="myModalLabel">BIBFRAME Authorities</h4>
       </div>
       <div class="modal-body">
-        <img src="{{ url_for("static", filename="img/bf-authority.png") }}" >
-
+        <img src="{{ url_for("static", filename="img/bf-authority.png") }}" class="pull-right img-thumbnail">
+        <p>BIBFRAME authorities are defined resources representing a key concept or thing that
+         have a <em>domain</em>, an entity responsible for the management, promotion, and
+         organization of the authority.</p>
+         {#<p>Works and Instances link with these 
+         different concepts and things that capture different relationships like creators, 
+         subjects, and publishers.</p>#}
+        <ul class="media-list">
+        <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Agent.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Agent</h4>
+           <p>The Agent class is an entity that has a role (Person, Organization, etc.) in a 
+              resource.</p>
+            <section class="media">
+              <div class="media-left">
+               <a href="http://bibframe.org/vocab/Person.html">
+                <img class="media-object" src="{{ url_for("static", filename="img/bf-person.png") }}" 
+                     alt="BIBFRAME Person">
+               </a>
+              </div>
+              <div class="media-body">
+                 <h4 class="media-heading">Person</h4>  
+                 <p>The Person Authority in BIBFRAME is an individual or an identity 
+                  established by an individual(such as a pseudonym)</p>
+              </div>
+            </section>
+            <section class="media">
+              <div class="media-left">
+               <a href="http://bibframe.org/vocab/Organization.html">
+                <img class="media-object" src="{{ url_for("static", filename="img/bf-person.png") }}" 
+                     alt="BIBFRAME Person">
+               </a>
+              </div>
+              <div class="media-body">
+                 <h4 class="media-heading">Organization</h4>  
+                 <p>An Organization Authority in BIBFRAME is a corporation, group of organization, or 
+                general grouping of people acting as a unit.</p>
+               
+              </div>
+            </section>
+          </div>
+        </li>
+        <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Place.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Place</h4>
+           <p>A Place authority is a geographic location either real or imagined.</p>
+          </div>
+        </li>
+        <li class="media">
+           <div class="media-left">
+            <a href="http://bibframe.org/vocab/Temporal.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Temporal Concept</h4>
+           <p>A Temporal Concept authority is a either real or imagined Chronological period.</p>
+          </div>
+        </li>
+        <li class="media">
+           <div class="media-left">
+            <a href="http://bibframe.org/vocab/Topic.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Topic</h4>
+           <p>A Topic authority is a concept or area of knowledge</p>
+          </div>
+        </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

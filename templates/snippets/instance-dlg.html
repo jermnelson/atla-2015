@@ -7,13 +7,82 @@
         <h4 class="modal-title" id="myModalLabel">BIBFRAME Instances</h4>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <section class="col-md-2">
-           <img src="{{ url_for("static", filename="img/bf-instance.png") }}" class="">
-          </section>
-          <article class="col-md-10">
-           <p>A BIBFRAME Instance</p> 
-          </article>
+        <img src="{{ url_for("static", filename="img/bf-instance.png") }}" class="pull-right">
+        <p>A BIBFRAME Instance reflects an individual, material embodiment of a BIBFRAME Work and
+         is conceptually similar to a FRBR Manifestation. An Instance can have specific subclasses  
+         to further distinguish specific types of Instances.
+        </p> 
+
+        <ul class="media-list">
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Archival.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Archival</h4>
+           <p>Resources created, accumulated, and used by different BIBFRAME Agents while
+           conducting their normal activities that are preserved 
+           because of their continued value.
+           </p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Electronic.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Electronic</h4>
+           <p>An Electronic Instance is a resource that is accessed or manipulated through a computing device and
+            can reside either on the local device or on a remote server.
+           </p>
+          </div>
+          </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Manuscript.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Manuscript</h4>
+           <p>
+             A Manuscript Instance is a resource that is handwritten or typed and are generally
+             unique.
+           </p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Monograph.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Monograph</h4>
+           <p>      
+             A Monograph Instance is a single unit cataloging resource, commonly know as a book.
+           </p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Serial.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Serial</h4>
+           <p>      
+             A Serial Instance is a multiple unit cataloging resource issued in successive part
+             without an definitive end.
+           </p>
+          </div>
+         </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

@@ -6,8 +6,60 @@
         <h4 class="modal-title" id="myModalLabel">BIBFRAME Annotations</h4>
       </div>
       <div class="modal-body">
-        <img src="{{ url_for("static", filename="img/bf-annotation.png") }}" >
-
+        <img src="{{ url_for("static", filename="img/bf-annotation.png") }}" class="pull-right">
+        <p>A BIBFRAME Annotation is a resource that asserts additional information about 
+         other BIBFRAME Works, Instances, Authorities, or even other Annotations.
+         Specific Annotation types include:</p>
+        <ul class="media-list">
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/CoverArt.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Cover Art</h4>
+           <p>The Cover Art Annotation is a link to an illustration of a BIBFRAME Instance</p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/HeldMaterial.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Held Material</h4>
+           <p>The Held Material Annotation contains summary holdings information for an
+            Organization's BIBFRAME Instances. The HeldMaterial subclass, 
+            <a href="http://bibframe.org/vocab/HeldItem.html">HeldItem</a>, contains
+            specific holding information for an Item.</p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Review.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Review</h4>
+           <p>The Review Annotation is a critique of a resource, such as a Movie review or 
+            a book comment on Amazon.</p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/TableOfContents.html">
+             <img class="media-object" src="..." alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Table of Contents</h4>
+           <p>The TableOfContents Annotation is a simple the table of contents information for 
+            a resource.</p>
+          </div>
+         </li>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
