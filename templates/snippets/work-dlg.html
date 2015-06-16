@@ -6,8 +6,81 @@
         <h4 class="modal-title" id="myModalLabel">BIBFRAME Works</h4>
       </div>
       <div class="modal-body">
-        <img src="{{ url_for("static", filename="img/bf-work.png") }}" >
+        
+        <img src="{{ url_for("static", filename="img/bf-work.png") }}" class="pull-right img-thumbnail">
+        <p>A BIBFRAME Work is a resource reflects the conceptual essence of the cataloging resource</p>
+        <ul class="media-list">
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Audio.html">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-audio.png") }}" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Audio</h4>
+           <p>Resources expressed in an audible form, including music or sounds.
+           </p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-body">
+           <h4 class="media-heading">Dataset</h4>
+           <p>
+             Data encoded in a defined structure. Includes numeric data, environmental 
+             data,etc., used by applications software to calculate averages, correlations, 
+             etc., or to produce models, etc., but not normally displayed in its raw form.
+           </p>
+          </div>
+          <div class="media-right">
+            <a href="http://bibframe.org/vocab/Dataset.html">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-dataset.png") }}" alt="...">
+            </a>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/MovingImage.html">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-moving-image.png") }}" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Moving Image</h4>
+           <p>
+             Images intended to be perceived as moving, including motion pictures (using liveaction 
+             and/or animation), film and video recordings of performances, events,etc.
+           </p>
+          </div>
+         </li>
+         <li class="media">
+          <div class="media-body">
+           <h4 class="media-heading">Still Image</h4>
+           <p>
+              Resource expressed through line, shape, shading, etc., intended to be perceived visually 
+              as a still image or images in two dimensions.
+           </p>
+          </div>
+          <div class="media-right">
+            <a href="http://bibframe.org/vocab/StillImage.html">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-still-image.png") }}" alt="...">
+            </a>
+          </div>
+         <li class="media">
+          <div class="media-left">
+            <a href="http://bibframe.org/vocab/Text.html">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-text.png") }}" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+           <h4 class="media-heading">Text</h4>
+           <p>
+             Form of notation for language intended to be perceived visually and understood through the use of language in written or spoken form.
+           </p>
+          </div>
+         </li>
 
+         </li>
+
+       </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

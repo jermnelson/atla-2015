@@ -17,7 +17,7 @@
         <li class="media">
           <div class="media-left">
             <a href="http://bibframe.org/vocab/Agent.html">
-             <img class="media-object" src="..." alt="...">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-agent.png") }}" alt="...">
             </a>
           </div>
           <div class="media-body">
@@ -40,7 +40,7 @@
             <section class="media">
               <div class="media-left">
                <a href="http://bibframe.org/vocab/Organization.html">
-                <img class="media-object" src="{{ url_for("static", filename="img/bf-person.png") }}" 
+                <img class="media-object" src="{{ url_for("static", filename="img/bf-organization.png") }}" 
                      alt="BIBFRAME Person">
                </a>
               </div>
@@ -56,18 +56,20 @@
         <li class="media">
           <div class="media-left">
             <a href="http://bibframe.org/vocab/Place.html">
-             <img class="media-object" src="..." alt="...">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-place.png") }}" alt="...">
             </a>
           </div>
+
           <div class="media-body">
            <h4 class="media-heading">Place</h4>
            <p>A Place authority is a geographic location either real or imagined.</p>
           </div>
+
         </li>
         <li class="media">
            <div class="media-left">
             <a href="http://bibframe.org/vocab/Temporal.html">
-             <img class="media-object" src="..." alt="...">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-temporal-concept.png") }}" alt="...">
             </a>
           </div>
           <div class="media-body">
@@ -78,13 +80,15 @@
         <li class="media">
            <div class="media-left">
             <a href="http://bibframe.org/vocab/Topic.html">
-             <img class="media-object" src="..." alt="...">
+             <img class="media-object" src="{{ url_for("static", filename="img/bf-topic.png") }}" alt="...">
             </a>
           </div>
+
           <div class="media-body">
            <h4 class="media-heading">Topic</h4>
            <p>A Topic authority is a concept or area of knowledge</p>
           </div>
+
         </li>
         </ul>
       </div>
