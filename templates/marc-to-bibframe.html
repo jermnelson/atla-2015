@@ -12,9 +12,18 @@
 <header class="jumbotron">
   <h2 class="title">ATLA 2015 - Introduction to BIBFRAME</h2>
   <h1>Mapping MARC to BIBFRAME</h1>
+  <p>There are two major projects that provide MARC21 to BIBFRAME
+   conversions. The first is the Library of Congress 
+   <a href="https://github.com/lcnetdev/marc2bibframe">marc2bibframe</a>
+   a XQuery process that takes MARCXML to BIBFRAME RDF.</p>
 </header>
 {% endblock %}
 
 {% block main %}
+<div class="row">
+  <section class="col-md-4">
+    <h2>MARC21</h2>
+  </section>
+</div>
 {{ slide_nav.generate(next_slide='bibframe-tech', previous='bibframe') }}
 {% endblock %}
